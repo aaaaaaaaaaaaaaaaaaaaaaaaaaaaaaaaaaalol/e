@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="title">Game Website</title>
+        <style>
+            body {
+                font-family: Roboto, sans-serif;
+                color: white;
+                background-color: #2f2f2f;
+            }
+            button {
+                border-radius: 15px;
+            }
+            button:hover {
+                border-radius: 15px;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+            ::selection {
+                background-color: purple;
+                color: white;
+            }
+            .icon {
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+        <!--<script src="script.js"></script>-->
+        <link id="favicon" rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Media_Player_Windows_11_logo.svg/512px-Media_Player_Windows_11_logo.svg.png?20220323141659">
+    </head>
+    <body>
+        <button onclick="alert('Whats new: Added FNAF, Deadly Descent, and 2048')">Click to view updates</button>
+        <br>
+        <p>Created by nineteenten123</p>
+        <h1>Game Website</h1>
+        <p>Welcome to my site. here i have the best browser games and cloak tools to hide this tab from ur teacher 🤫</p>
+        <br>
+        <p>Phonk Playlist</p>
+        <br>
+        <iframe src="https://drive.google.com/file/d/1YYPR8SjEGJJrPQmMJFSSR1KMRQ9yk6De/preview" width="640" height="480" allow="autoplay"></iframe>
+        <br>
+        <br>
+        <button id="showCloakToolsButton">Show cloak tools</button>
+        <button id="hideCloakToolsButton">Hide cloak tools</button>
+        <br>
+        <div id="cloakTools" style="display: none;">
+            <input type="text" id="changeTabNameBox" placeholder="Enter tab name here"><button id="changeTabNameButton">Change Tab Name</button>
+            <br>
+            <input type="text" placeholder="Enter tab icon URL here" id="changeTabIconBox"><button id="changeTabIconButton">Change Tab Icon</button>
+            <br>
+            <p>Or select one of these tab icons here</p>
+            <button onclick="ixlFavicon()">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/IXL_Learning.png">
+            </button>
+            <button onclick="schoologyFavicon()">
+                <img class="icon" src="https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico">
+            </button>
+            <button onclick="gClassFavicon()">
+                <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Google_Classroom_Logo.svg/2372px-Google_Classroom_Logo.svg.png">
+            </button>
+            
+        </div>
+        <br>
+        <p>Click a game to load</p>
+        <div id="videoContainer" style="position: relative; width: 800px; height: 450px;"> <!--Credits to ChatGPT for this part-->
+            <iframe
+                id="videoFrame"
+                src=""
+                allowfullscreen
+                style="width: 100%; height: 100%; border: solid black 1px;">
+            </iframe>
+
+            <button id="fullscreenBtn"
+                    style="position: absolute; bottom: 10px; right: 10px; z-index: 10; padding: 8px 12px;">
+              ⛶ Fullscreen
+            </button>
+        </div>
+
+        <h2>Games</h2>
+        <button onclick="resetFrame()">Click to reset game frame</button>
+        <br>
+        <br>
+        <button onclick="tenMinutesTillDawnGame()">10 Minutes Till Dawn</button>
+        <button onclick="onevonelolGame()">1v1.lol</button>
+        <button onclick="aDayInOfficeGame()">A Day in the Office</button>
+        <br>
+        <button onclick="smallWorldCupGame()">A Small World Cup</button>
+        <button onclick="basketRandomGame()">Basket Random</button>
+        <button onclick="cs16Game()">C.S. 1.6</button>
+        <br>
+        <button onclick="gtaGame()">Stickman GTA Vice City</button>
+        <button onclick="tagGame()">TAG</button>
+        <button onclick="policePursuitGame()">Police Pursuit 2</button>
+        <br>
+        <button onclick="gunSpinGame()">Gun Spin</button>
+        <button onclick="amoungUsGame()">Amoung Us</button>
+        <button onclick="nnNITFGame()">99 Nights in the Forrest</button>
+        <br>
+        <button onclick="dDGame()">Deadly Descent</button>
+        <button onclick="fNAFGame()">FNAF</button>
+        <button onclick="two048Game()">2048</button>
+        <br><br>
+        <h2>Recommend games</h2>
+        <p>Fill out the form below to recommend games!</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMpKuuKETEQsUzBTcw6EE_dD0SD3Y2Yur3ULAJ2KR5Bj7cWg/viewform?embedded=true" width="640" height="647" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </body>
+</html>
+
+<script>
+    function ixlFavicon(){
+        faviconElement.href = `https://upload.wikimedia.org/wikipedia/commons/7/7d/IXL_Learning.png`;
+    }
+    function schoologyFavicon(){
+        faviconElement.href = `https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico`;
+    }
+    function gClassFavicon(){
+        faviconElement.href = `https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Google_Classroom_Logo.svg/2372px-Google_Classroom_Logo.svg.png`;
+    }
+    var changeTabNameButton = document.getElementById("changeTabNameButton");
+    var changeTabNameBox = document.getElementById("changeTabNameBox").value;
+    var changeTabIconButton = document.getElementById("changeTabIconButton");
+    var changeTabIconBox = document.getElementById("changeTabIconBox").value;
+
+    var cloakTools = document.getElementById("cloakTools");
+    var showCloakButton = document.getElementById("showCloakToolsButton");
+    var hideCloakButton = document.getElementById("hideCloakToolsButton");
+
+    var titleElement = document.getElementById("title");
+    var faviconElement = document.getElementById("favicon");
+
+    showCloakButton.addEventListener("click", function() {
+        cloakTools.style.display = "block";
+    });
+
+    hideCloakButton.addEventListener("click", function() {
+        cloakTools.style.display = "none";
+    });
+
+    changeTabNameButton.addEventListener("click", function() {
+        var newTitle = document.getElementById("changeTabNameBox").value;
+        titleElement.textContent = newTitle;
+    });
+
+    changeTabIconButton.addEventListener("click", function() {
+        var newIconURL = document.getElementById("changeTabIconBox").value;
+        faviconElement.href = newIconURL;
+    });
+
+    const iframe = document.getElementById('videoFrame');
+    const btn = document.getElementById('fullscreenBtn');
+
+    btn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        // Request fullscreen on the iframe
+        iframe.requestFullscreen().catch(err => {
+          console.error(`Error attempting fullscreen: ${err.message}`);
+        });
+      } else {
+        // Exit fullscreen
+        document.exitFullscreen();
+      }
+    });
+
+    // Optional: Change button text when fullscreen state changes
+    document.addEventListener('fullscreenchange', () => {
+      btn.textContent = document.fullscreenElement ? 'Exit Fullscreen' : '⛶ Fullscreen';
+    });
+
+    function gtaGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clstickmangtacity.html";
+    }
+    function cs16Game(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clcs1.6.html";
+    }
+    function basketRandomGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clbasketrandom.html";
+    }
+    function smallWorldCupGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clasmallworldcup.html";
+    }
+    function aDayInOfficeGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cladayintheoffice.html";
+    }
+    function onevonelolGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cl1v1lol.html";
+    }
+    function tenMinutesTillDawnGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cl10minutestildawn.html";
+    }
+    function resetFrame(){
+        iframe.src = "";
+    }
+    function tagGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cltagc3.html";
+    }
+    function policePursuitGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clpolicepursuit2.html";
+    }
+    function gunSpinGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clgun-spin.html";
+    }
+    function amoungUsGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clamongus.html";
+    }
+    function nnNITFGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cl99nightsitf.html";
+    }
+    function dDGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cldeadlydescent.html";
+    }
+    function fNAFGame(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/clFNAF.html";
+    }
+    function two048Game(){
+        iframe.src = "https://nineteenten123.github.io/game-website/docs/cl2048.html";
+    }
+</script>
